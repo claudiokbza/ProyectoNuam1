@@ -58,6 +58,7 @@
                             <th class="text-center" style="width: 50px; position: sticky; left: 0; z-index: 20;">Sel.</th>
                             <th style="position: sticky; left: 50px; z-index: 20;">Ejercicio</th>
                             <th style="position: sticky; left: 120px; z-index: 20;">Instrumento</th>
+                            {% if user.is_superuser %} <th>Usuario</th> {% endif %}
                             <th>Fecha Pago</th>
                             <th>Monto Total ($)</th>
                             <th>Descripción</th>
@@ -80,6 +81,9 @@
                             </td>
                             <td style="position: sticky; left: 50px; background-color: inherit; z-index: 10;">{{ c.ejercicio }}</td>
                             <td style="position: sticky; left: 120px; background-color: inherit; z-index: 10;" class="fw-bold">{{ c.instrumento.codigo }}</td>
+                            {% if user.is_superuser %} 
+                                <td><span class="badge bg-warning text-dark">{{ c.usuario.username }}</span></td> 
+                            {% endif %}
                             <td>{{ c.fecha_pago|date:"d/m/Y" }}</td>
                             <td>${{ c.monto_total }}</td>
                             <td>{{ c.descripcion|default:"-" }}</td>
