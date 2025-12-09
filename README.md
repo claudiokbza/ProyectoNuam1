@@ -21,8 +21,8 @@ Pasos.
 4.- Crear superUsuario. (Ya está creado, no debería ser necesario crearlo)
 	py manage.py createsuperuser
 usuario : proyectonuam
-correo	: admin01
-pass	: admin01
+correo	: proyecto@nuam.cl
+pass	: proyectonuam123456
 
 5.-  Iniciar servidor
 	-python manage.py runserver
